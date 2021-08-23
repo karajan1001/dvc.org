@@ -48,6 +48,7 @@ master:
         exp-e6c97
         exp-1dad0
         exp-1df77
+        exp-9fcef
 ```
 
 To remove any of them, just give their names to `dvc exp remove`:
@@ -57,5 +58,24 @@ $ dvc exp remove exp-1dad0 exp-1df77
 
 $ dvc exp list
 master:
+        exp-9fcef
         exp-e6c97
+```
+
+We can also remove all of the experiments from a remote Git repository:
+
+```dvc
+$ dvc exp push myremote exp-e6c97
+Pushed experiment 'exp-e6c97'to Git remote 'myremote'.
+$ dvc exp push myremote exp-9fcef
+Pushed experiment 'exp-9fcef'to Git remote 'myremote'.
+
+$ dvc exp list myremote
+master:
+        exp-aaa23
+        exp-e6c97
+
+$ dvc exp remote -r myremote
+$ dvc exp list myremote
+$
 ```
