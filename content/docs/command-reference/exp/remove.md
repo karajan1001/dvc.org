@@ -77,5 +77,4 @@ master:
 
 $ dvc exp remote -r myremote
 $ dvc exp list myremote
-$
 ```
